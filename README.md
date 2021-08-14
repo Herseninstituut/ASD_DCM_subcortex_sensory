@@ -1,5 +1,4 @@
 # ASD_DCM_subcortex_sensory
-running DCM analysis on rs-fMRI from the ABIDE dataset
 
 Companion code and data to: Lorenzini L., van Wingen G., Cerliani L., "Atypically high influence of subcortical activity on primary sensory regions in Autism".
 
