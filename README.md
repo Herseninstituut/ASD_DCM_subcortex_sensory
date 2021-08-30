@@ -11,13 +11,13 @@ DISCLAIMER The software is provided 'AS IS'. The public distribution of this scr
 
 CONTENTS
 
-Sub_359: to be updated
+Sub_359: This folder contains the fMRI raw files and derivatives for each subject used in the analysis. 
 
-CSVs: Output CSVs and auziliary CSV files
+CSVs: Output CSVs and auxilliary CSV files
 
 GCMs: output group DCMs 
 
-pheno: to be updated
+pheno: This folder contains the csv and mat files with phenotypical and clinical information about the ABIDE participants used in the analysis 
 
-JOBS: to be updated (all the needed scripts)
+JOBS: Scripts to replicate the analysis presented in the manuscript step-by-step. 
 
