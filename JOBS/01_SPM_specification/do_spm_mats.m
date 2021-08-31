@@ -1,6 +1,10 @@
+
+% Change the following lines to math your own repositories
+addpath('/PATH/TO/SPM') % ADD the path to your SPM repository
+basedir = '/path/to/your/repository/' % Change this line with the pat to the downloaded github repository
+
 %%%----SETTINGS----%%%
-basedir = '/data_local/deeplearning/ABIDE_LC/analyses/DCM/DCM_219/'
-rootDir = fullfile(basedir,'Sub_219/');
+rootDir = fullfile(basedir,'Sub_359/');
 spmDir = '/RESULTS/';
 phenofold = fullfile(basedir,'pheno')
 phenofile = fullfile (phenofold, 'pheno_359.mat')

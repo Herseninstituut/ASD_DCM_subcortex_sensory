@@ -1,9 +1,11 @@
 
-%%% SETTINGS %%%%
 
-% General Settings
-basedir = '/data_local/deeplearning/ABIDE_LC/analyses/DCM/DCM_219';
-subjdir = fullfile(basedir, 'Sub_219');
+% Change the following lines to math your own repositories
+addpath('/PATH/TO/SPM') % ADD the path to your SPM repository
+basedir = '/path/to/your/repository/' % Change this line with the pat to the downloaded github repository
+
+%%% SETTINGS %%%%
+subjdir = fullfile(basedir, 'Sub_359');
 jobdir = fullfile(basedir, 'JOBS');
 spmfold = 'RESULTS';
 groupdir = fullfile(basedir,'GCMs') ;
