@@ -6,7 +6,7 @@ basedir = '/path/to/your/repository/' % Change this line with the pat to the dow
 %%% SETTINGS %%%
 rootDir = fullfile(basedir,'Sub_359/');
 spmDir = '/RESULTS/';
-
+icaDir = fullfile(basedir, 'ICA_results');
 
 % Create the subjects list
 D = dir(rootDir);
@@ -25,21 +25,21 @@ for subject = subjects(i,1)
     spmmat = {[subjDir spmDir 'SPM.mat']};
     outputDir = [subjDir spmDir];
     
-    %%Create Basal Ganglia ROI from HO_subcortical
-    jobs{1}.util{1}.voi.spmmat = spmmat;
-    jobs{1}.util{1}.voi.adjust = 0;    
-    jobs{1}.util{1}.voi.session = 1;
-    jobs{1}.util{1}.voi.name = 'basal_ganglia';
-    jobs{1}.util{1}.voi.roi{1}.mask.image = {'/data_local/deeplearning/ABIDE_LC/analyses/DCM/atlases/HO_BG_4mm.nii,1'};
-    jobs{1}.util{1}.voi.roi{1}.mask.threshold = 0;
-    jobs{1}.util{1}.voi.expression = 'i1';
-    
+%     %%Create Basal Ganglia ROI from HO_subcortical
+%     jobs{1}.util{1}.voi.spmmat = spmmat;
+%     jobs{1}.util{1}.voi.adjust = 0;    
+%     jobs{1}.util{1}.voi.session = 1;
+%     jobs{1}.util{1}.voi.name = 'basal_ganglia';
+%     jobs{1}.util{1}.voi.roi{1}.mask.image = {'/data_local/deeplearning/ABIDE_LC/analyses/DCM/atlases/HO_BG_4mm.nii,1'};
+%     jobs{1}.util{1}.voi.roi{1}.mask.threshold = 0;
+%     jobs{1}.util{1}.voi.expression = 'i1';
+%     
     %%Create S1 ROI from melodic_ICA n. 29
     jobs{2}.util{1}.voi.spmmat = spmmat;
     jobs{2}.util{1}.voi.adjust = 0;
     jobs{2}.util{1}.voi.session = 1;
     jobs{2}.util{1}.voi.name = 'vS1M1';
-    jobs{2}.util{1}.voi.roi{1}.mask.image = {'/data_local/deeplearning/ABIDE_LC/analyses/DCM/atlases/melodic_IC52_JAMA2015_bin.nii,29'};
+    jobs{2}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,29')};
     jobs{2}.util{1}.voi.roi{1}.mask.threshold = 0;
     jobs{2}.util{1}.voi.expression = 'i1';
 
@@ -49,7 +49,7 @@ for subject = subjects(i,1)
     jobs{3}.util{1}.voi.adjust = 0;
     jobs{3}.util{1}.voi.session = 1;
     jobs{3}.util{1}.voi.name = 'dS1M1';
-    jobs{3}.util{1}.voi.roi{1}.mask.image = {'/data_local/deeplearning/ABIDE_LC/analyses/DCM/atlases/melodic_IC52_JAMA2015_bin.nii,5'};
+    jobs{3}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,5')};
     jobs{3}.util{1}.voi.roi{1}.mask.threshold = 0;
     jobs{3}.util{1}.voi.expression = 'i1';
     
@@ -58,7 +58,7 @@ for subject = subjects(i,1)
     jobs{4}.util{1}.voi.adjust = 0;
     jobs{4}.util{1}.voi.session = 1;
     jobs{4}.util{1}.voi.name = 'V1';
-    jobs{4}.util{1}.voi.roi{1}.mask.image = {'/data_local/deeplearning/ABIDE_LC/analyses/DCM/atlases/melodic_IC52_JAMA2015_bin.nii,8'};
+    jobs{4}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,8')};
     jobs{4}.util{1}.voi.roi{1}.mask.threshold = 0;
     jobs{4}.util{1}.voi.expression = 'i1';
     
@@ -67,19 +67,19 @@ for subject = subjects(i,1)
     jobs{5}.util{1}.voi.adjust = 0;
     jobs{5}.util{1}.voi.session = 1;
     jobs{5}.util{1}.voi.name = 'U1';
-    jobs{5}.util{1}.voi.roi{1}.mask.image = {'/data_local/deeplearning/ABIDE_LC/analyses/DCM/atlases/melodic_IC52_JAMA2015_bin.nii,16'};
+    jobs{5}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,16')};
     jobs{5}.util{1}.voi.roi{1}.mask.threshold = 0;
     jobs{5}.util{1}.voi.expression = 'i1';
 
-    %%Create Thalamus ROI from HO_subcortical
-    jobs{6}.util{1}.voi.spmmat = spmmat;
-    jobs{6}.util{1}.voi.adjust = 0;    
-    jobs{6}.util{1}.voi.session = 1;
-    jobs{6}.util{1}.voi.name = 'Thalamus';
-    jobs{6}.util{1}.voi.roi{1}.mask.image = {'/data_local/deeplearning/ABIDE_LC/analyses/DCM/atlases/HO_th_4mm.nii,1'};
-    jobs{6}.util{1}.voi.roi{1}.mask.threshold = 0;
-    jobs{6}.util{1}.voi.expression = 'i1';
-    
+%     %%Create Thalamus ROI from HO_subcortical
+%     jobs{6}.util{1}.voi.spmmat = spmmat;
+%     jobs{6}.util{1}.voi.adjust = 0;    
+%     jobs{6}.util{1}.voi.session = 1;
+%     jobs{6}.util{1}.voi.name = 'Thalamus';
+%     jobs{6}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'HO_th_4mm.nii,1'};
+%     jobs{6}.util{1}.voi.roi{1}.mask.threshold = 0;
+%     jobs{6}.util{1}.voi.expression = 'i1';
+%     
     
     cd(outputDir)
     spm_jobman('run', jobs)
@@ -106,7 +106,7 @@ for subject = subjects(i,1)
     jobs{1}.util{1}.voi.adjust = 0;    
     jobs{1}.util{1}.voi.session = 1;
     jobs{1}.util{1}.voi.name = 'SUBCORTICAL';
-    jobs{1}.util{1}.voi.roi{1}.mask.image = {'/data_local/deeplearning/ABIDE_LC/analyses/DCM/atlases/melodic_IC52_JAMA2015_bin.nii,17'};
+    jobs{1}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,17')};
     jobs{1}.util{1}.voi.roi{1}.mask.threshold = 0;
     jobs{1}.util{1}.voi.expression = 'i1';
     
