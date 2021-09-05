@@ -6,13 +6,12 @@ addpath('/PATH/TO/SPM') % ADD the path to your SPM repository
 basedir = '/path/to/your/repository/' % Change this line with the pat to the downloaded github repository
 
 
-subjdir = fullfile(basedir, 'Sub_359');
+subjdir = fullfile(basedir, 'Sub_359/');
 GCMdir = fullfile(basedir,'GCMs') ;
 GCMfile = fullfile(GCMdir, 'GCM_estimated');
-analysisfold = fullfile (basedir, 'Interaction_Group_Age_analysis');
-if ~exist(analysisfold) 
-    mkdir(analysisfold); 
-end 
+analysisfold = fullfile (basedir, 'Interaction_Group_Age_analysis/');
+if ~exists(analysisfold); 
+    mkdir(analysi)
 phenoDir = fullfile(basedir, 'pheno');
 phenofile = fullfile(phenoDir, 'pheno_359.mat');
 templates60 = fullfile(GCMdir,'GCM_templates_60models.mat');
