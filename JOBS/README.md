@@ -116,5 +116,4 @@ Output of this analysis will be saved in:
 ```
 ASD_DCM_subcortex_sensory/
 └── Interaction_Group_Age_analysis
-
 ```
