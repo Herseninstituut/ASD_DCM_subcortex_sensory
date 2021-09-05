@@ -96,11 +96,25 @@ SUB_359/
 
 
 ## 03_DCM_estimation
-do_DCM_estimation.m estimates Dynamic Causal models (DCM) for each subject in the analysis. 
+do_DCM_estimation.m specifies and estimates Dynamic Causal models (DCM) for each subject in the analysis. 
 The DCMs specify the relationship between subcortical and primary sensory cortical regions as specified in the manuscript. 
 The script uses inputs generated in the previous steps and stored in th `RESULTS` folders. 
-In each `RESULTS` folder a `DCM_full.mat` will be created in this step.
+1. In each `RESULTS` folder a `DCM_full.mat` will be specified in this step.
+2. A `GCM_pre_estimated.mat` (group DCM before estimation) file will be saved in the `GCMs` folder]
+3. Estimation of GCM will generate a `GCM_estimated.mat` in the `GCM` folder
 
 
 
-04_PEB_Group_Age: Run the PEB analysis to investigate the effect of group, age and the interaction between the two on DCM parameters (main analysis presented in the manuscript). 
+## 04_PEB_Group_Age
+This step reproduces the MAIN analyisis described in the manuscript, investigating the effect of age and its interaction with group (ASD/TD) on the subcortico-cortical effective connectivity. Inputs to this script are the files created in the previous steps of the pipeline.
+The script is follows two main steps: 
+1. Creation of the design matrix including mean (1s), age, group, age*group, motion (FD).
+2. Second level PEB analysis: This step will run the PEB analysis as described in the manuscript. Running this script will open up the SPM PEB interface to review the results with the classic SPM graphic. 
+
+Output of this analysis will be saved in:
+
+```
+ASD_DCM_subcortex_sensory/
+└── Interaction_Group_Age_analysis
+
+```
