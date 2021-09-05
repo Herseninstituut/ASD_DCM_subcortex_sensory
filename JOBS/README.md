@@ -66,7 +66,7 @@ SUB_359/
 
 
 
-## 02_Timecourse extraction:
+## 02_Timecourse extraction
 do_timcourse_extraction.m takes as input the SPM.mat files generated in the previous step and the ICA masks defining the ROI for the analysis. 
 ICA masks should be placed in:
 
@@ -94,6 +94,13 @@ SUB_359/
 		└── VOI_U1_1.mat
 ```
 
-03_DCM_estimation: Estimates Dynamic Causal models (DCM) for each subject in the analysis. The DCM specify the relationship between subcortical and primary sensory cortical regions as specified in the manuscript. 
+
+## 03_DCM_estimation
+do_DCM_estimation.m estimates Dynamic Causal models (DCM) for each subject in the analysis. 
+The DCMs specify the relationship between subcortical and primary sensory cortical regions as specified in the manuscript. 
+The script uses inputs generated in the previous steps and stored in th `RESULTS` folders. 
+In each `RESULTS` folder a `DCM_full.mat` will be created in this step.
+
+
 
 04_PEB_Group_Age: Run the PEB analysis to investigate the effect of group, age and the interaction between the two on DCM parameters (main analysis presented in the manuscript). 
