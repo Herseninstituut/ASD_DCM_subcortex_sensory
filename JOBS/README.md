@@ -10,6 +10,19 @@ Pre-processed NIfTI files are available in a zenodo repository ** HERE ADD THE L
 ** ADD Instruction to download them **
 
 ## Structure of Directories
+
+The scripts are ordered in folders starting with numbers (01, 02) describing the order in which they should be used. Each folder contains only one script. 
+
+
+In all scripts you are asked to modify the first three lines with the path to the local cloned directory and to the SPM toolbox.
+
+```
+% Change the following lines to match your own repositories
+addpath('/PATH/TO/SPM') % ADD the path to your SPM repository
+basedir = '/path/to/your/repository/' % Change this line with the pat to the downloaded github repository
+```
+
+
 The shared scripts follow a folder structure as it is presented in the github repository. The cloned directory can be placed everywhere and should include the downloaded data from zenodo. This is an example folder structure:
 
 ```
@@ -26,16 +39,6 @@ MyPC/github/ASD_DCM_subcortex_sensory
 
 ```
 
-The scripts are ordered in folders starting with numbers (01, 02) describing the order in which they should be used. Each folder contains only one script. 
-
-
-In all scripts you are asked to modify the first three lines with the path to the local cloned directory and to the SPM toolbox.
-
-```
-% Change the following lines to match your own repositories
-addpath('/PATH/TO/SPM') % ADD the path to your SPM repository
-basedir = '/path/to/your/repository/' % Change this line with the pat to the downloaded github repository
-```
 
 
 ## 01_SPM_specification
