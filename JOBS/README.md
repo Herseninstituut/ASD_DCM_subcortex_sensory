@@ -1,6 +1,7 @@
 # DCM pipeline
 The Following series of script reproduces the analysis reported in Lorenzini L., van Wingen G., Cerliani L., "Atypically high influence of subcortical activity on primary sensory regions in Autism".
-It starts from an input dataset of **pre-processed** NIfTI files and process them using Dynamic Causal Modelling (DCM) and Parametric Empirical Bayes (PEB) pipeline from [SPM](https://www.fil.ion.ucl.ac.uk/spm/), to estimate subcortico-cortical effective connectivity in ASD and TD participants from the ABIDE dataset.. 
+It starts from an input dataset of **pre-processed** NIfTI files and process them using Dynamic Causal Modelling (DCM) and Parametric Empirical Bayes (PEB) pipeline from [SPM](https://www.fil.ion.ucl.ac.uk/spm/), to estimate subcortico-cortical effective connectivity in ASD and TD participants from the ABIDE dataset. 
+
 Useful links and tutorials on DCM and PEB in SPM can be found [here]( https://www.sciencedirect.com/science/article/pii/S1053811919305233) and [here](https://en.wikibooks.org/wiki/SPM/Parametric_Empirical_Bayes_(PEB)#Overview). 
 
 ## Data Availabaility
@@ -25,7 +26,19 @@ MyPC/github/ASD_DCM_subcortex_sensory
 
 ```
 
-The scripts are ordered in folder startin with numbers (01, 02) describing the order in which they should be used. Each folder contains only one script. 
+The scripts are ordered in folders starting with numbers (01, 02) describing the order in which they should be used. Each folder contains only one script. 
+
+
+In all scripts you are asked to modify the first three lines with the path to the local cloned directory and to the SPM toolbox.
+
+```
+% Change the following lines to match your own repositories
+addpath('/PATH/TO/SPM') % ADD the path to your SPM repository
+basedir = '/path/to/your/repository/' % Change this line with the pat to the downloaded github repository
+```
+
+
+## 01_SPM_specification
 
 
 01_SPM_specification: Specify and estimate the SPM.mat from each participants NIfTI file
