@@ -14,7 +14,7 @@ Pre-processed NIfTI files are available in a zenodo repository ** HERE ADD THE L
 The scripts are ordered in folders starting with numbers (01, 02) describing the order in which they should be used. Each folder contains only one script. 
 
 
-In all scripts you are asked to modify the first three lines with the path to the local cloned directory and to the SPM toolbox.
+In all scripts you are asked to modify the first three lines with the path to the cloned directory and to the SPM toolbox on your local PC.
 
 ```
 % Change the following lines to match your own repositories
@@ -23,10 +23,10 @@ basedir = '/path/to/your/repository/' % Change this line with the pat to the dow
 ```
 
 
-The shared scripts follow a folder structure as it is presented in the github repository. The cloned directory can be placed everywhere and should include the downloaded data from zenodo. This is an example folder structure:
+The shared scripts follow a folder structure as it is presented in the github repository. The cloned directory can be placed everywhere and should include the downloaded data from zenodo (SUB_359). This is an example folder structure:
 
 ```
-MyPC/github/ASD_DCM_subcortex_sensory
+MyPC/github/ASD_DCM_subcortex_sensory/
 ├── CSVs
 ├── GCMs
 ├── ICA_results
@@ -42,6 +42,28 @@ MyPC/github/ASD_DCM_subcortex_sensory
 
 
 ## 01_SPM_specification
+The first provided scripts specify and estimates the SPM.mat from each participant's NIfTI. SPM.mat files are the basic files for working with SPM and contain information about the fMRI session. 
+As the fMRI pre-processing was previously performed, this script is limited to a NIfTI to SPM.mat conversion, and no additional processing step is performed at this stage. 
+Pre-processed NIfTI files should be places in a `SUB_359` folder in the base directory (see above). 
+```
+SUB_359/
+├── 50004
+└── 50005
+	└── 50005_RS_bptf_clean.nii.gz
+```
+
+Within each subject folder the script will create a `RESULTS` folder, which will store the SPM.mat and other derivatives created by the pipeline. 
+
+
+```
+SUB_359/
+├── 50004
+└── 50005
+	└── 50005_RS_bptf_clean.nii.gz
+	└── RESULTS
+		└── SPM.mat
+```
+
 
 
 01_SPM_specification: Specify and estimate the SPM.mat from each participants NIfTI file
