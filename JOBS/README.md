@@ -66,9 +66,33 @@ SUB_359/
 
 
 
-01_SPM_specification: Specify and estimate the SPM.mat from each participants NIfTI file
+## 02_Timecourse extraction:
+do_timcourse_extraction.m takes as input the SPM.mat files generated in the previous step and the ICA masks defining the ROI for the analysis. 
+ICA masks should be placed in:
 
-02_Timecourse extraction: Extract ROI timecourses from the 5 regions used in the manuscript. 
+```
+ASD_DCM_subcortex_sensory/   # Cloned directory
+└── ICA_results
+	└── melodic_IC52_JAMA2015_bin.nii.gz
+
+```
+
+This script cut the needed volumes from the melodic output and uses them as masks for timecourses extraction in SPM. 
+Output timeseries are saved in subjects' folders `RESULTS`. After running this job the SUB_359 should have this struture: 
+
+```
+SUB_359/
+├── 50004
+└── 50005
+	└── 50005_RS_bptf_clean.nii.gz
+	└── RESULTS
+		└── SPM.mat
+		└── VOI_SUBCORTICAL_1.mat
+		└── VOI_V1_1.mat
+		└── VOI_dS1M1_1.mat
+		└── VOI_vS1M1_1.mat
+		└── VOI_U1_1.mat
+```
 
 03_DCM_estimation: Estimates Dynamic Causal models (DCM) for each subject in the analysis. The DCM specify the relationship between subcortical and primary sensory cortical regions as specified in the manuscript. 
 
