@@ -18,6 +18,17 @@ git clone https://github.com/luislorenzini/ASD_DCM_subcortex_sensory.git
 ```
 
 The fMRI data are stored in a separate folder and must be downloaded separately to be able to reproduce the analysis. 
+To download the fMRI NIfTI files go to [https://zenodo.org/record/5463495#.YTdw2J0zZPY](https://zenodo.org/record/5463495#.YTdw2J0zZPY) and click on the Download button. 
+Once the zip folder has been downloaded, you can move it to the cloned github directory and unzip. You can do that by running: 
+```
+mv ./SUB_359.zip /path/to/github/repo/
+unzip /path/to/github/repo/SUB_359.zip 
+
+```
+
+Once unzipped, you should be able to list specific subject folders and NIfTI files
+
+
 
 
 
