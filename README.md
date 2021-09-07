@@ -42,5 +42,5 @@ Once unzipped, you should be able to list specific subject folders and NIfTI fil
 
 - pheno: This folder contains the csv and mat files with phenotypical and clinical information about the ABIDE participants used in the analysis 
 
-- JOBS: Scripts to replicate the analysis presented in the manuscript step-by-step. A guide to run the scripts can be found in the folder description
+- JOBS: Scripts to replicate the analysis presented in the manuscript step-by-step. A guide to run the scripts can be found in the folder description.
 
