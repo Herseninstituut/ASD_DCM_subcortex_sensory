@@ -32,7 +32,7 @@ Once unzipped, you should be able to list specific subject folders and NIfTI fil
 
 
 
-## FOLDER CONTENTS
+## Folder Contents
 
 - Sub_359: This folder contains the fMRI raw files and derivatives for each subject used in the analysis. 
 

@@ -6,8 +6,8 @@ Useful links and tutorials on DCM and PEB in SPM can be found [here]( https://ww
 
 ## Data Availabaility
 
-Pre-processed NIfTI files are available in a zenodo repository ** HERE ADD THE LINK WHEN THAT IS READY **. 
-** ADD Instruction to download them **
+Pre-processed NIfTI files are available in a zenodo repository and can be found here: [https://zenodo.org/record/5463495#.YTd6Rp0zZPZ](https://zenodo.org/record/5463495#.YTd6Rp0zZPZ). 
+Follow the "Downloading codes and data" section for an explanation how to get the data. 
 
 ## Structure of Directories
 
