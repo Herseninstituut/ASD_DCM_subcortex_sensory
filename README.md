@@ -4,6 +4,8 @@ Companion code and data to: Lorenzini L., van Wingen G., Cerliani L., "Atypicall
 
 This distribution provides the data and the codes to reproduce the analyses of differences in functional effective connectivity described in the manuscript. 
 
+In order to reproduce the analysis follow the instruction in the JOB folder. 
+
 [MATLAB](https://mathworks.com) and [SPM](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/) must be installed. 
 
 
@@ -34,7 +36,7 @@ Once unzipped, you should be able to list specific subject folders and NIfTI fil
 
 ## Folder Contents
 
-- Sub_359: This folder contains the fMRI raw files and derivatives for each subject used in the analysis. 
+- Sub_359: This folder contains the fMRI raw files.
 
 - CSVs: Output CSVs and auxilliary CSV files
 
