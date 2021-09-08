@@ -7,7 +7,7 @@ This distribution provides the data and the codes to reproduce the analyses of d
 In order to reproduce the analysis follow the instruction in the JOB folder. 
 
 [MATLAB](https://mathworks.com) and [SPM](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/) must be installed. 
-
+Files with extension ".mat" should be loaded in MATLAB. 
 
 DISCLAIMER The software is provided 'AS IS'. The public distribution of this script is UNIQUELY intended to provide an accurate documentation of the analyses performed in the published manuscript. The author declines any responsibility regarding machine malfunctioning or data loss due to the use of this script in the version provided here or in any modification of it.
 
