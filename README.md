@@ -2,7 +2,9 @@
 
 Companion code and data to: Lorenzini L., van Wingen G., Cerliani L., "Atypically high influence of subcortical activity on primary sensory regions in Autism".
 
-This distribution provides the data and the code to reproduce the analyses of differences in functional effective connectivity described in the manuscript.
+_A link to the open access manuscript will be placed here as soon as it is available online_
+
+This repository provides the code to reproduce the analyses of differences in functional effective connectivity described in the manuscript.
 
 **To reproduce the analyses in the paper, clone the repo and add the data as described below and then follow the instructions in the `JOBS` directory**
 
@@ -62,7 +64,9 @@ Once unzipped, the directory tree should look as follows:
 [plus the other folders in this repo]
 ```
 
-This folder contains the preprocessed 4D fMRI data in MNI 4x4x4mm space. The preprocessing steps have been described in the manuscript and its supplementary materials, and correspond to the data prepared and used in the previous paper:
+This folder contains the preprocessed 4D fMRI data in MNI 4x4x4mm space. This dataset is a subsample from the original [Autism Brain Imaging Data Exchange - ABIDE](http://fcon_1000.projects.nitrc.org/indi/abide/abide_I.html) dataset.
+
+The participants selection procedure and the preprocessing steps are detailed in the main text and (especially) in the supplementary materials of the manuscript, and correspond to the data prepared and used in the previous paper:
 
 [Cerliani, L., Mennes, M., Thomas, R. M., Di Martino, A., Thioux, M., & Keysers, C. (2015). Increased Functional Connectivity Between Subcortical and Cortical Resting-State Networks in Autism Spectrum Disorder. JAMA Psychiatry.](https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2301161)
 
