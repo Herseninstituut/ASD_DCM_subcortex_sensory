@@ -62,8 +62,10 @@ Once unzipped, the directory tree should look as follows:
 [plus the other folders in this repo]
 ```
 
+This folder contains the preprocessed 4D fMRI data in MNI 4x4x4mm space. The preprocessing steps have been described in the manuscript and its supplementary materials, and correspond to the data prepared and used in the previous paper:
 
+[Cerliani, L., Mennes, M., Thomas, R. M., Di Martino, A., Thioux, M., & Keysers, C. (2015). Increased Functional Connectivity Between Subcortical and Cortical Resting-State Networks in Autism Spectrum Disorder. JAMA Psychiatry.](https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2301161)
 
 ___
 
-DISCLAIMER The software is provided 'AS IS'. The public distribution of this script is UNIQUELY intended to provide an accurate documentation of the analyses performed in the published manuscript. The author declines any responsibility regarding machine malfunctioning or data loss due to the use of this script in the version provided here or in any modification of it.
+DISCLAIMER: The software is provided 'AS IS'. The public distribution of this script is UNIQUELY intended to provide an accurate documentation of the analyses performed in the published manuscript. The author declines any responsibility regarding machine malfunctioning or data loss due to the use of this script in the version provided here or in any modification of it.
