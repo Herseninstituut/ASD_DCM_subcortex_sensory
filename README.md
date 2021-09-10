@@ -21,7 +21,8 @@ Alternatively, you can download a zip file containing the whole repo and then un
 The preprocessed fMRI data must be downloaded separately to be able to reproduce the analysis.
 To download the fMRI NIfTI files go to [this Zenodo repository](https://zenodo.org/record/5463495#.YTdw2J0zZPY) and click on the Download button.
 Once the zip folder has been downloaded, you can move it to the cloned github directory and unzip. You can do that by running (in Linux/Mac):
-```
+
+```bash
 # [DATA_PATH] is the directory where the Zenodo repo was downloaded
 # [GITHUB_PATH] is the location where the github repo was
 # downloaded (and if necessary unzipped)
@@ -60,5 +61,6 @@ Once unzipped, the directory tree should look as follows:
 
 - **JOBS**: Scripts to replicate the analysis presented in the manuscript step-by-step. A guide to run the scripts can be found in the folder description.
 
+___
 
 DISCLAIMER The software is provided 'AS IS'. The public distribution of this script is UNIQUELY intended to provide an accurate documentation of the analyses performed in the published manuscript. The author declines any responsibility regarding machine malfunctioning or data loss due to the use of this script in the version provided here or in any modification of it.
