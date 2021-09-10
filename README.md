@@ -21,6 +21,8 @@ This repository provides the code to reproduce the analyses of differences in fu
 
 - **JOBS**: Scripts to replicate the analysis presented in the manuscript step-by-step. A guide to run the scripts can be found in the folder description.
 
+**NB:** files with `.mat` extension are Matlab binary files.
+
 
 
 ## Cloning the repo and adding the data from Zenodo
