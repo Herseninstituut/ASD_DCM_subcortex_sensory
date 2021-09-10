@@ -9,6 +9,18 @@ This distribution provides the data and the code to reproduce the analyses of di
 [MATLAB](https://mathworks.com) and [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/) must be installed. The code has been run on Linux and Windows. We safely assume it should also run on a Mac.
 
 
+## Folder Contents
+
+- **CSVs**: Output CSVs and auxilliary CSV files
+
+- **GCMs**: output group DCMs
+
+- **pheno**: This folder contains the csv and mat files with phenotypical and clinical information about the ABIDE participants used in the analysis
+
+- **JOBS**: Scripts to replicate the analysis presented in the manuscript step-by-step. A guide to run the scripts can be found in the folder description.
+
+
+
 ## Cloning the repo and adding the data from Zenodo
 
 The repository can be downloaded by running the following code on your on machine
@@ -51,15 +63,6 @@ Once unzipped, the directory tree should look as follows:
 ```
 
 
-## Folder Contents
-
-- **CSVs**: Output CSVs and auxilliary CSV files
-
-- **GCMs**: output group DCMs
-
-- **pheno**: This folder contains the csv and mat files with phenotypical and clinical information about the ABIDE participants used in the analysis
-
-- **JOBS**: Scripts to replicate the analysis presented in the manuscript step-by-step. A guide to run the scripts can be found in the folder description.
 
 ___
 
