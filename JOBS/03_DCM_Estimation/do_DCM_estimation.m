@@ -4,9 +4,11 @@
 addpath('/PATH/TO/SPM') % ADD the path to your SPM repository
 basedir = '/path/to/your/repository/' % Change this line with the pat to the downloaded github repository
 
+
 %%% SETTINGS %%%%
 subjdir = fullfile(basedir, 'Sub_359');
 jobdir = fullfile(basedir, 'JOBS');
+addpath(jobdir)
 spmfold = 'RESULTS';
 groupdir = fullfile(basedir,'GCMs') ;
 
@@ -125,7 +127,7 @@ end
 %Save the model by specifying it in the subject's result folder
 function savemodel(SPM, xY, s, spmpath)
     cd( spmpath );
-    spm_dcm_specify (SPM ,xY ,s);
+    spm_dcm_specify(SPM ,xY ,s);
 
 end
 
