@@ -5,7 +5,7 @@ basedir = '/path/to/your/repository/' % Change this line with the pat to the dow
 
 %%% SETTINGS %%%
 rootDir = fullfile(basedir,'Sub_359/');
-spmDir = '/RESULTS/';
+spmDir = 'RESULTS';
 icaDir = fullfile(basedir, 'ICA_results');
 
 % Create the subjects list
@@ -18,12 +18,12 @@ subjects(isnan(subjects)) = [];
 
 
 for i = 1:length(subjects)
-for subject = subjects(i,1)
+    subject = subjects(i,1)
     
     
-    subjDir = [rootDir num2str(subject)];
-    spmmat = {[subjDir spmDir 'SPM.mat']};
-    outputDir = [subjDir spmDir];
+    subjDir = fullfile(rootDir, num2str(subject));
+    spmmat = fullfile(subjDir, spmDir, 'SPM.mat');
+    outputDir = fullfile(subjDir, spmDir);
     
 %     %%Create Basal Ganglia ROI from HO_subcortical
 %     jobs{1}.util{1}.voi.spmmat = spmmat;
@@ -35,41 +35,41 @@ for subject = subjects(i,1)
 %     jobs{1}.util{1}.voi.expression = 'i1';
 %     
     %%Create S1 ROI from melodic_ICA n. 29
-    jobs{2}.util{1}.voi.spmmat = spmmat;
-    jobs{2}.util{1}.voi.adjust = 0;
-    jobs{2}.util{1}.voi.session = 1;
-    jobs{2}.util{1}.voi.name = 'vS1M1';
-    jobs{2}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,29')};
-    jobs{2}.util{1}.voi.roi{1}.mask.threshold = 0;
-    jobs{2}.util{1}.voi.expression = 'i1';
+    jobs{1}.util{1}.voi.spmmat = {spmmat};
+    jobs{1}.util{1}.voi.adjust = 0;
+    jobs{1}.util{1}.voi.session = 1;
+    jobs{1}.util{1}.voi.name = 'vS1M1';
+    jobs{1}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,29')};
+    jobs{1}.util{1}.voi.roi{1}.mask.threshold = 0;
+    jobs{1}.util{1}.voi.expression = 'i1';
 
 
     %%Create M1 ROI from melodic_ICA n. 5
-    jobs{3}.util{1}.voi.spmmat = spmmat;
+    jobs{2}.util{1}.voi.spmmat = {spmmat};
+    jobs{2}.util{1}.voi.adjust = 0;
+    jobs{2}.util{1}.voi.session = 1;
+    jobs{2}.util{1}.voi.name = 'dS1M1';
+    jobs{2}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,5')};
+    jobs{2}.util{1}.voi.roi{1}.mask.threshold = 0;
+    jobs{2}.util{1}.voi.expression = 'i1';
+   
+    %%Create V1 ROI from melodic_ICA n. 8
+    jobs{3}.util{1}.voi.spmmat = {spmmat};
     jobs{3}.util{1}.voi.adjust = 0;
     jobs{3}.util{1}.voi.session = 1;
-    jobs{3}.util{1}.voi.name = 'dS1M1';
-    jobs{3}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,5')};
+    jobs{3}.util{1}.voi.name = 'V1';
+    jobs{3}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,8')};
     jobs{3}.util{1}.voi.roi{1}.mask.threshold = 0;
     jobs{3}.util{1}.voi.expression = 'i1';
     
-    %%Create V1 ROI from melodic_ICA n. 8
-    jobs{4}.util{1}.voi.spmmat = spmmat;
+    %%Create U1 ROI from melodic_ICA n.16
+    jobs{4}.util{1}.voi.spmmat = {spmmat};
     jobs{4}.util{1}.voi.adjust = 0;
     jobs{4}.util{1}.voi.session = 1;
-    jobs{4}.util{1}.voi.name = 'V1';
-    jobs{4}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,8')};
+    jobs{4}.util{1}.voi.name = 'U1';
+    jobs{4}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,16')};
     jobs{4}.util{1}.voi.roi{1}.mask.threshold = 0;
     jobs{4}.util{1}.voi.expression = 'i1';
-    
-    %%Create U1 ROI from melodic_ICA n.16
-    jobs{5}.util{1}.voi.spmmat = spmmat;
-    jobs{5}.util{1}.voi.adjust = 0;
-    jobs{5}.util{1}.voi.session = 1;
-    jobs{5}.util{1}.voi.name = 'U1';
-    jobs{5}.util{1}.voi.roi{1}.mask.image = {fullfile(icaDir, 'melodic_IC52_JAMA2015_bin.nii,16')};
-    jobs{5}.util{1}.voi.roi{1}.mask.threshold = 0;
-    jobs{5}.util{1}.voi.expression = 'i1';
 
 %     %%Create Thalamus ROI from HO_subcortical
 %     jobs{6}.util{1}.voi.spmmat = spmmat;
@@ -89,20 +89,19 @@ for subject = subjects(i,1)
     
     
 end 
-end
 
 
 
 %%%SUBCORTICAL
 for i = 1:length(subjects)
-for subject = subjects(i,1)
+    subject = subjects(i,1)
     
-     subjDir = [rootDir num2str(subject)];
-    spmmat = {[subjDir spmDir 'SPM.mat']};
-    outputDir = [subjDir spmDir];
+     subjDir = fullfile(rootDir, num2str(subject)); 
+    spmmat = fullfile(subjDir, spmDir, 'SPM.mat');
+    outputDir = fullfile(subjDir, spmDir);
     
     %%Create Basal Ganglia ROI from HO_subcortical
-    jobs{1}.util{1}.voi.spmmat = spmmat;
+    jobs{1}.util{1}.voi.spmmat = {spmmat};
     jobs{1}.util{1}.voi.adjust = 0;    
     jobs{1}.util{1}.voi.session = 1;
     jobs{1}.util{1}.voi.name = 'SUBCORTICAL';
@@ -113,7 +112,7 @@ for subject = subjects(i,1)
     
     cd(outputDir)
     spm_jobman('run', jobs)
-end 
+
 end
 
 clear all;

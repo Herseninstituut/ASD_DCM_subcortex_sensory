@@ -69,7 +69,7 @@ DM = zeros(nsub,nvariables);
 DM(:,1) = 1;
 
 for i=1:length(subjlist)
-     subject = subjlist(i,1)
+     subject = subjlist(i,1);
         [~, index] = ismember(subject,phenomat(:,2));
         DM(i,2) = Group(index);
         DM(i,3) = AGE(index);
@@ -78,7 +78,7 @@ for i=1:length(subjlist)
 end
 
 % The second column is the group, change the 2s(TD) in to 0s
-for i=1:length(DM)
+for i=1:height(DM)
     if DM(i,2)== 2
         DM(i,2) = 0; 
     end 
@@ -132,4 +132,4 @@ BMAfilename = fullfile(analysisfold, 'BMA_GroupAge.mat')
 save(BMAfilename, 'BMA', 'BMR')
 
 
-spm_dcm_peb_review_90ci(PEB_A, GCM)
+spm_dcm_peb_review_90ci(PEB_A, GCM))

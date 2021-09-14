@@ -5,7 +5,7 @@ basedir = '/path/to/your/repository/' % Change this line with the pat to the dow
 
 %%%----SETTINGS----%%%
 rootDir = fullfile(basedir,'Sub_359/');
-spmDir = '/RESULTS/';
+spmDir = 'RESULTS';
 phenofold = fullfile(basedir,'pheno')
 phenofile = fullfile (phenofold, 'pheno_359.mat')
 
@@ -33,7 +33,7 @@ ESTIMATE_GLM = 1;
 
 %For each subject, create timing files and jobs structure
 for i = 1:length(subjects)
-for subject = subjects(i,1)
+    subject = subjects(i,1)
     
     %Get TR from phenomat
     [tf, index]=ismember(subject,phenomat(:,2),'rows');
@@ -42,7 +42,7 @@ for subject = subjects(i,1)
 
     funcs = [num2str(subject) '_RS_bptf_clean.nii'];
     %See whether output directory exists; if it doesn't, create it
-    outputDir = [rootDir num2str(subject) spmDir];
+    outputDir = fullfile(rootDir, num2str(subject), spmDir);  %%CHANGE HEREEE
     
     if ~exist(outputDir)
         mkdir(outputDir)
@@ -60,7 +60,7 @@ for subject = subjects(i,1)
 
     %Grab frames for each run using spm_select, and fill in session
     %information within jobs structure
-    files = spm_select('ExtFPList', [rootDir num2str(subject)], ['^' funcs], 1:numScans);
+    files = spm_select('ExtFPList', fullfile(rootDir, num2str(subject)), ['^' funcs], 1:numScans);
 
     jobs{1}.stats{1}.fmri_spec.sess.scans = cellstr(files);
 
@@ -90,11 +90,8 @@ for subject = subjects(i,1)
         spm_spm(SPM);
     end
    
-end
+
 end
 
 
 clear all;
-
-
-   
